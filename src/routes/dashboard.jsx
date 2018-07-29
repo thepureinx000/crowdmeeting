@@ -8,10 +8,9 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
-import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
-import TableList from "views/TableList/TableList.jsx";
-import NotificationsPage from "views/Notifications/Notifications.jsx";
+import DashboardPage from "../ui/templates/Dashboard/Dashboard.jsx";
+import UserProfile from "../features/UserProfile/UserProfile.jsx";
+import NotificationsPage from "../features/Notifications/Notifications.jsx";
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -26,13 +25,6 @@ const dashboardRoutes = [
     navbarName: "Your profile",
     icon: Person,
     component: UserProfile
-  },
-  {
-    path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
-    icon: ContentPaste,
-    component: TableList
   },
   {
     path: "/notifications",
