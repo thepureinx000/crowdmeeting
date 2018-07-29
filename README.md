@@ -1,6 +1,5 @@
 # CROWDMEETINGS
 
-<<<<<<< HEAD
 ## Getting started
 
 ### Installing and running
