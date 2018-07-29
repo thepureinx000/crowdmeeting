@@ -22,16 +22,16 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import Table from "components/Table/Table.jsx";
-import Tasks from "components/Tasks/Tasks.jsx";
-import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
-import Danger from "components/Typography/Danger.jsx";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardIcon from "components/Card/CardIcon.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import GridItem from "../../molecules/Grid/GridItem.jsx";
+import Table from "../../molecules/Table/Table.jsx";
+import Tasks from "../../molecules/Tasks/Tasks.jsx";
+import CustomTabs from "../../atoms/CustomTabs/CustomTabs.jsx";
+import Danger from "../../molecules/Typography/Danger.jsx";
+import Card from "../../molecules/Card/Card.jsx";
+import CardHeader from "../../molecules/Card/CardHeader.jsx";
+import CardIcon from "../../molecules/Card/CardIcon.jsx";
+import CardBody from "../../molecules/Card/CardBody.jsx";
+import CardFooter from "../../molecules/Card/CardFooter.jsx";
 
 import { bugs, website, server } from "variables/general";
 import addEvent from "assets/img/icons/add_event.png";

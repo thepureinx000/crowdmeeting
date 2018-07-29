@@ -4,14 +4,14 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardAvatar from "components/Card/CardAvatar.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import GridItem from "../../ui/molecules/Grid/GridItem.jsx";
+import CustomInput from "../../ui/atoms/CustomInput/CustomInput.jsx";
+import Button from "../../ui/atoms/CustomButtons/Button.jsx";
+import Card from "../../ui/molecules/Card/Card.jsx";
+import CardHeader from "../../ui/molecules/Card/CardHeader.jsx";
+import CardAvatar from "../../ui/molecules/Card/CardAvatar.jsx";
+import CardBody from "../../ui/molecules/Card/CardBody.jsx";
+import CardFooter from "../../ui/molecules/Card/CardFooter.jsx";
 
 import avatar from "assets/img/faces/marc.jpg";
 
@@ -158,7 +158,7 @@ function UserProfile(props) {
             </CardAvatar>
             <CardBody profile>
               <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <h4 className={classes.cardTitle}> Laszlo Hyperloud</h4>
               <p className={classes.description}>
                 Don't be scared of the truth because we need to restart the
                 human foundation in truth And I love you like Kanye loves Kanye
