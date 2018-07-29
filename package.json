@@ -38,5 +38,15 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
   },
-  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard"
+  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
+  "devDependencies": {
+    "history": "^4.7.2",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "recompose": "^0.27.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-symbiote": "^2.3.0",
+    "redux-thunk": "^2.3.0"
+  }
 }
