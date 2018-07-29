@@ -23,24 +23,9 @@ import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
 import GridItem from "../../molecules/Grid/GridItem.jsx";
-import Table from "../../molecules/Table/Table.jsx";
-import Tasks from "../../molecules/Tasks/Tasks.jsx";
-import CustomTabs from "../../atoms/CustomTabs/CustomTabs.jsx";
-import Danger from "../../molecules/Typography/Danger.jsx";
 import Card from "../../molecules/Card/Card.jsx";
-import CardHeader from "../../molecules/Card/CardHeader.jsx";
-import CardIcon from "../../molecules/Card/CardIcon.jsx";
-import CardBody from "../../molecules/Card/CardBody.jsx";
-import CardFooter from "../../molecules/Card/CardFooter.jsx";
 
-import { bugs, website, server } from "variables/general";
 import addEvent from "assets/img/icons/add_event.png";
-
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "variables/charts";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
@@ -59,7 +44,7 @@ const cardStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
-}
+};
 
 class Dashboard extends React.Component {
   state = {
