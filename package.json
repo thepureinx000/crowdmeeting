@@ -30,7 +30,6 @@
   },
   "keywords": [],
   "license": "MIT",
-  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
   "devDependencies": {
     "final-form": "^4.8.3",
     "history": "^4.7.2",
