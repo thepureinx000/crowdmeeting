@@ -1,4 +1,5 @@
 import React from "react";
+import { Field, Form } from "react-final-form";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
@@ -34,6 +35,16 @@ const styles = {
   }
 };
 
+const required = value => (value ? undefined : "Required");
+const minValue = min => value =>
+  value >= min ? undefined : `Should be greater than ${min}`;
+const composeValidators = (...validators) => value =>
+  validators.reduce((error, validator) => error || validator(value), undefined);
+
+const onSubmit = values => {
+  console.log(values);
+};
+
 function UserProfile(props) {
   const { classes } = props;
   return (
@@ -45,108 +56,211 @@ function UserProfile(props) {
               <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
               <p className={classes.cardCategoryWhite}>Complete your profile</p>
             </CardHeader>
-            <CardBody>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={5}>
-                  <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      disabled: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Username"
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Email address"
-                    id="email-address"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
-                  <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-            </CardBody>
-            <CardFooter>
-              <Button color="primary">Update Profile</Button>
-            </CardFooter>
+              <Form
+                onSubmit={onSubmit}
+                render={({ handleSubmit, reset, submitting, pristine, values }) => (
+                  <form onSubmit={handleSubmit}>
+                    <CardBody>
+                    <Grid container>
+                      <GridItem xs={12} sm={12} md={5}>
+                        <Field
+                          name="Company"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                                labelText="Company"
+                                id="company-disabled"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                                inputProps={{
+                                  disabled: false,
+                                  ...input
+                                }}
+                              />
+                          )}
+                        </Field>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={3}>
+                        <Field
+                          name="username"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Username"
+                              id="username"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={4}>
+                        <Field
+                          name="email"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Email address"
+                              id="email-address"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                    </Grid>
+                    <Grid container>
+                      <GridItem xs={12} sm={12} md={6}>
+                        <Field
+                          name="firstName"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="First Name"
+                              id="first-name"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={6}>
+                        <Field
+                          name="lastName"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Last Name"
+                              id="last-name"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                    </Grid>
+                    <Grid container>
+                      <GridItem xs={12} sm={12} md={4}>
+                        <Field
+                          name="city"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="City"
+                              id="city"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={4}>
+                        <Field
+                          name="country"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Country"
+                              id="country"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={4}>
+                        <Field
+                          name="postalCode"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Postal Code"
+                              id="postal-code"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                    </Grid>
+                    <Grid container>
+                      <GridItem xs={12} sm={12} md={12}>
+                        <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
+                        <Field
+                          name="info"
+                          validate={required}
+                          type="text"
+                        >
+                          {({ input }) => (
+                            <CustomInput
+                              labelText="Info"
+                              id="about-me"
+                              formControlProps={{
+                                fullWidth: true
+                              }}
+                              inputProps={{
+                                ...input,
+                                rows: 5,
+                                multiline: true
+                              }}
+                            />
+                          )}
+                        </Field>
+                      </GridItem>
+                    </Grid>
+                    </CardBody>
+                    <CardFooter>
+                      {/*<Button color="primary" type="submit" disabled={submitting}>Update Profile</Button>*/}
+                      <button type="submit" disabled={submitting}>Update Profile</button>
+                    </CardFooter>
+                  </form>
+                )}
+              />
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
