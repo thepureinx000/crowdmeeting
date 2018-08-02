@@ -1,7 +1,7 @@
 {
   "name": "crowdmeetings-web",
   "version": "1.2.0",
-  "description": "Material Dashboard React. Coded by Creative Tim",
+  "description": "Crowdmeetings – a platform where you meet.",
   "private": false,
   "main": "index.js",
   "dependencies": {
