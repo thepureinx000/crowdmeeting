@@ -11,7 +11,7 @@ const reducer = combineReducers({
 });
 
 export function configureStore(rootInitialState = {}) {
-    const api = new Api('https://reqres.in/api/');
+    const api = new Api('api');
 
     const middlewares = [
         createLogger({ collapsed: true }),
