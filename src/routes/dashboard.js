@@ -8,9 +8,9 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
-import DashboardPage from "../ui/templates/Dashboard/Dashboard.jsx";
-import UserProfile from "../features/UserProfile/UserProfile.jsx";
-import NotificationsPage from "../features/Notifications/Notifications.jsx";
+import DashboardPage from "../ui/templates/Dashboard/dashboard";
+import UserProfile from "../features/UserProfile/user-profile";
+import NotificationsPage from "../features/Notifications/notifications";
 const dashboardRoutes = [
   {
     path: "/dashboard",
