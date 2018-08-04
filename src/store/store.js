@@ -5,6 +5,8 @@ import { createSymbiote } from 'redux-symbiote';
 
 import { Api } from './api';
 
+import { userReducer } from "./modules/user";
+
 export const LOADING = {
     failed: -1,
     initial: 0,
@@ -22,7 +24,6 @@ const { actions, reducer: usersReducer } = createSymbiote(initialState, {
     loading: {
         start: (state) => ({ ...state, status: LOADING.loading }),
         failed: (state, error) => ({ ...state, error, status: LOADING.failed }),
-        finish: (state, users) => ({ ...state, users: users.data, status: LOADING.ready }),
     },
 }, 'users');
 
@@ -42,7 +43,7 @@ export const loadUsers = () => (
 );
 
 const reducer = combineReducers({
-    users: usersReducer,
+    user: userReducer,
 });
 
 export function configureStore(rootInitialState = {}) {
