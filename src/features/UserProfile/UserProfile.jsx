@@ -16,6 +16,9 @@ import CardFooter from "../../ui/molecules/Card/CardFooter.jsx";
 
 import avatar from "assets/img/faces/marc.jpg";
 
+import FormStateFromRedux from "./formStateFromRedux";
+import FormStateToRedux from "./formStateToRedux";
+
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
@@ -60,6 +63,7 @@ function UserProfile(props) {
                 onSubmit={onSubmit}
                 render={({ handleSubmit, reset, submitting, pristine, values }) => (
                   <form onSubmit={handleSubmit}>
+                    <FormStateToRedux form="user"/>
                     <CardBody>
                     <Grid container>
                       <GridItem xs={12} sm={12} md={5}>
@@ -258,6 +262,7 @@ function UserProfile(props) {
                       {/*<Button color="primary" type="submit" disabled={submitting}>Update Profile</Button>*/}
                       <button type="submit" disabled={submitting}>Update Profile</button>
                     </CardFooter>
+                    <FormStateFromRedux form="user" />
                   </form>
                 )}
               />

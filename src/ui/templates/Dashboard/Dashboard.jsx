@@ -40,7 +40,7 @@ const fabStyle = {
 const cardStyle = {
   maxWidth: 80,
   height: 80,
-  backgroundColor: '#fcb400',
+  backgrouhndColor: '#fcb400',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
@@ -76,18 +76,6 @@ class Dashboard extends React.Component {
             </Button>
           </GridItem>
           <GridItem xs={12} sm={3} md={1}>
-            <Card style={cardStyle}>
-              <img src={addEvent} alt="add" style={{ width: '42px', height: '42px' }}/>
-              <span>Add Event</span>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={3} md={1}>
-            <Card style={cardStyle}>
-              <img src={addEvent} alt="add" style={{ width: '42px', height: '42px' }}/>
-              <span>Add Event</span>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={3 } md={1}>
             <Card style={cardStyle}>
               <img src={addEvent} alt="add" style={{ width: '42px', height: '42px' }}/>
               <span>Add Event</span>
