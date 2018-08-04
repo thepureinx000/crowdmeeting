@@ -27,7 +27,7 @@ ReactDOM.render(
             {indexRoutes.map((prop, key) => {
               return <Route path={prop.path} component={prop.component} key={key} />;
             })}
-            <Route path="/create-event/:idx" exact component={CreateEvent} />
+            <Route path="/create-event/:idx" component={CreateEvent} />
           </Switch>
         </React.Fragment>
       </BrowserRouter>
