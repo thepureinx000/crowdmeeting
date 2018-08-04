@@ -10,6 +10,8 @@ import "assets/css/material-dashboard-react.css?v=1.3.0";
 
 import indexRoutes from "routes";
 
+import CreateEvent from "./features/CreateEvent/create-event";
+
 const rootElement = document.getElementById('root')
 const hist = createBrowserHistory();
 const store = configureStore(window.initialStore || {})
@@ -25,6 +27,7 @@ ReactDOM.render(
             {indexRoutes.map((prop, key) => {
               return <Route path={prop.path} component={prop.component} key={key} />;
             })}
+            <Route path="/create-event/:idx" exact component={CreateEvent} />
           </Switch>
         </React.Fragment>
       </BrowserRouter>
