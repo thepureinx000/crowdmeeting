@@ -1,4 +1,4 @@
-import Dashboard from "../features/Dashboard/Dashboard.jsx";
+import Dashboard from "../features/Dashboard/dashboard";
 
 const indexRoutes = [{ path: "/", component: Dashboard }];
 

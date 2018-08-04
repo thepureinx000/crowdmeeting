@@ -12,7 +12,7 @@ import Header from "../../ui/molecules/Header/Header.jsx";
 import Footer from "../../ui/molecules/Footer/Footer.jsx";
 import Sidebar from "../../ui/molecules/Sidebar/Sidebar.jsx";
 
-import dashboardRoutes from "routes/dashboard.jsx";
+import dashboardRoutes from "routes/dashboard";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 

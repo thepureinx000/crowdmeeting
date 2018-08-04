@@ -1,46 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import Thunk from 'redux-thunk';
-import { createSymbiote } from 'redux-symbiote';
 
 import { Api } from './api';
 
 import { userReducer } from "./modules/user";
-
-export const LOADING = {
-    failed: -1,
-    initial: 0,
-    loading: 1,
-    ready: 2,
-};
-
-const initialState = {
-    state: LOADING.initial,
-    error: null,
-    users: [],
-};
-
-const { actions, reducer: usersReducer } = createSymbiote(initialState, {
-    loading: {
-        start: (state) => ({ ...state, status: LOADING.loading }),
-        failed: (state, error) => ({ ...state, error, status: LOADING.failed }),
-    },
-}, 'users');
-
-export const loadUsers = () => (
-    async (dispatch, getState, { api }) => {
-        dispatch(actions.loading.start());
-
-        try {
-            const users = await api.get('/users');
-
-            dispatch(actions.loading.finish(users))
-        }
-        catch (error) {
-            dispatch(actions.loading.failed(error.message))
-        }
-    }
-);
 
 const reducer = combineReducers({
     user: userReducer,
