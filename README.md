@@ -1,4 +1,4 @@
-# CROWDMEETINGS
+# CROWDMEET
 
 ## Getting started
 

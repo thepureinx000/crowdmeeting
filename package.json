@@ -1,7 +1,7 @@
 {
-  "name": "material-dashboard-react",
+  "name": "crowdmeetings-web",
   "version": "1.2.0",
-  "description": "Material Dashboard React. Coded by Creative Tim",
+  "description": "Crowdmeetings – a platform where you meet.",
   "private": false,
   "main": "index.js",
   "dependencies": {
@@ -28,19 +28,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-dashboard-react.git"
-  },
   "keywords": [],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
-  },
-  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
   "devDependencies": {
+    "final-form": "^4.8.3",
     "history": "^4.7.2",
+    "react-final-form": "^3.6.5",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
     "recompose": "^0.27.1",

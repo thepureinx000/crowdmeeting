@@ -1,52 +1,19 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import Thunk from 'redux-thunk';
-import { createSymbiote } from 'redux-symbiote';
 
 import { Api } from './api';
 
-export const LOADING = {
-    failed: -1,
-    initial: 0,
-    loading: 1,
-    ready: 2,
-};
-
-const initialState = {
-    state: LOADING.initial,
-    error: null,
-    users: [],
-};
-
-const { actions, reducer: usersReducer } = createSymbiote(initialState, {
-    loading: {
-        start: (state) => ({ ...state, status: LOADING.loading }),
-        failed: (state, error) => ({ ...state, error, status: LOADING.failed }),
-        finish: (state, users) => ({ ...state, users: users.data, status: LOADING.ready }),
-    },
-}, 'users');
-
-export const loadUsers = () => (
-    async (dispatch, getState, { api }) => {
-        dispatch(actions.loading.start());
-
-        try {
-            const users = await api.get('/users');
-
-            dispatch(actions.loading.finish(users))
-        }
-        catch (error) {
-            dispatch(actions.loading.failed(error.message))
-        }
-    }
-);
+import { userReducer } from "./modules/user";
+import { eventReducer } from "./modules/event";
 
 const reducer = combineReducers({
-    users: usersReducer,
+    user: userReducer,
+    event: eventReducer
 });
 
 export function configureStore(rootInitialState = {}) {
-    const api = new Api('https://reqres.in/api/');
+    const api = new Api('api');
 
     const middlewares = [
         createLogger({ collapsed: true }),
