@@ -6,6 +6,7 @@ import Notifications from "@material-ui/icons/Notifications";
 import DashboardPage from "../ui/templates/Dashboard/dashboard";
 import UserProfile from "../features/UserProfile/user-profile";
 import NotificationsPage from "../features/Notifications/notifications";
+
 const dashboardRoutes = [
   {
     path: "/dashboard",

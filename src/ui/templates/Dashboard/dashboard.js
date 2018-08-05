@@ -48,7 +48,7 @@ class Dashboard extends React.Component {
         </Grid>
         <Grid container>
           <GridItem xs={12} sm={3} md={3}>
-            <Link to="/create-event/1">
+            <Link to="/create-event">
               <Button variant="fab" aria-label="Add" className={classes.button} style={fabStyle}>
                 <AddIcon />
               </Button>
