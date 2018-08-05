@@ -26,7 +26,7 @@ const Sidebar = ({ ...props }) => {
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
-        Crowdmeetings
+        Crowdmeet
       </a>
     </div>
   );
