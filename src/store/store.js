@@ -5,9 +5,11 @@ import Thunk from 'redux-thunk';
 import { Api } from './api';
 
 import { userReducer } from "./modules/user";
+import { eventReducer } from "./modules/event";
 
 const reducer = combineReducers({
     user: userReducer,
+    event: eventReducer
 });
 
 export function configureStore(rootInitialState = {}) {
