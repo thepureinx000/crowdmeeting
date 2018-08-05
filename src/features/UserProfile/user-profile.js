@@ -16,6 +16,8 @@ import CardFooter from "../../ui/molecules/Card/CardFooter.jsx";
 
 import avatar from "assets/img/faces/marc.jpg";
 
+import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+
 import FormStateFromRedux from "./Form/formStateFromRedux";
 import FormStateToRedux from "./Form/formStateToRedux";
 
@@ -49,7 +51,7 @@ const onSubmit = values => {
 };
 
 function UserProfile(props) {
-  const { classes } = props;
+  const { classes, ...rest } = props;
   return (
     <div>
       <Grid container>
@@ -293,4 +295,4 @@ function UserProfile(props) {
   );
 }
 
-export default withStyles(styles)(UserProfile);
+export default withStyles(dashboardStyle)(UserProfile);

@@ -10,50 +10,40 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Icon from "@material-ui/core/Icon";
 // core components
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
 import sidebarStyle from "assets/jss/material-dashboard-react/components/sidebarStyle.jsx";
+import logo from "assets/img/cwd-logo.png";
 
 const Sidebar = ({ ...props }) => {
   // verifies if routeName is the one active (in browser input)
-  function activeRoute(routeName) {
-    return props.location.pathname.indexOf(routeName) > -1 ? true : false;
-  }
   const { classes, color, logo, image, logoText, routes } = props;
-  var links = (
+  let brand = (
+    <div className={classes.logo}>
+      <a href="#" className={classes.logoLink}>
+        <div className={classes.logoImage}>
+          <img src={logo} alt="logo" className={classes.img} />
+        </div>
+        Crowdmeetings
+      </a>
+    </div>
+  );
+  let links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {
-        if (prop.redirect) return null;
-        var activePro = " ";
-        var listItemClasses;
-        if(prop.path === "/upgrade-to-pro"){
-          activePro = classes.activePro + " ";
-          listItemClasses = classNames({
-            [" " + classes[color]]: true
-          });
-        } else {
-          listItemClasses = classNames({
-            [" " + classes[color]]: activeRoute(prop.path)
-          });
-        }
-        const whiteFontClasses = classNames({
-          [" " + classes.whiteFont]: activeRoute(prop.path)
-        });
         return (
           <NavLink
             to={prop.path}
-            className={activePro + classes.item}
+            className={classes.item}
             activeClassName="active"
             key={key}
           >
-            <ListItem button className={classes.itemLink + listItemClasses}>
-              <ListItemIcon className={classes.itemIcon + whiteFontClasses}>
-                <prop.icon />
-              </ListItemIcon>
+            <ListItem button className={classes.itemLink}>
               <ListItemText
                 primary={prop.sidebarName}
-                className={classes.itemText + whiteFontClasses}
+                className={classes.itemText}
                 disableTypography={true}
               />
             </ListItem>
@@ -61,16 +51,6 @@ const Sidebar = ({ ...props }) => {
         );
       })}
     </List>
-  );
-  var brand = (
-    <div className={classes.logo}>
-      <a href="https://www.creative-tim.com" className={classes.logoLink}>
-        <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-        </div>
-        {logoText}
-      </a>
-    </div>
   );
   return (
     <div>
@@ -122,7 +102,6 @@ const Sidebar = ({ ...props }) => {
 };
 
 Sidebar.propTypes = {
-  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(sidebarStyle)(Sidebar);
