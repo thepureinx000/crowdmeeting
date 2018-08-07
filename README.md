@@ -16,7 +16,7 @@ npm(yarn) test
 
 ### TODO
 
-- [] Add eslint(atomix config)
+- [x] Add eslint(atomix config)(added in eslint branch)
 - [] Add Flow typing
 - [] Add SSR(Next.js)
 - [] build a server (koa)
