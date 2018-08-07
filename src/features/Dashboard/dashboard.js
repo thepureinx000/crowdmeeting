@@ -23,14 +23,17 @@ class App extends React.Component {
   state = {
     mobileOpen: false
   };
+  
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
+
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
   }
+
   render() {
     const { classes, ...rest } = this.props;
     return (

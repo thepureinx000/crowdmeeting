@@ -20,7 +20,16 @@
     "react-google-maps": "9.4.5",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.4",
-    "react-swipeable-views": "0.12.13"
+    "react-swipeable-views": "0.12.13",
+    "redux-symbiote": "^2.3.0",
+    "redux-thunk": "^2.3.0",
+    "redux": "^4.0.0",
+    "final-form": "^4.8.3",
+    "history": "^4.7.2",
+    "react-final-form": "^3.6.5",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "recompose": "^0.27.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,15 +40,9 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "final-form": "^4.8.3",
-    "history": "^4.7.2",
-    "react-final-form": "^3.6.5",
-    "react-helmet": "^5.2.0",
-    "react-redux": "^5.0.7",
-    "recompose": "^0.27.1",
-    "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
-    "redux-symbiote": "^2.3.0",
-    "redux-thunk": "^2.3.0"
+    "@atomix/eslint-config-react": "^6.4.0",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.3.0",
+    "redux-logger": "^3.0.6"
   }
 }
