@@ -16,6 +16,7 @@ npm(yarn) test
 
 ### TODO
 
+- [] Add eslint(atomix config)
 - [] Add Flow typing
 - [] Add SSR(Next.js)
 - [] build a server (koa)
